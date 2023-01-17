@@ -8,6 +8,12 @@ numpy = "*"
 oapackage = "*"
 argh = "*"
 tqdm = "*"
+mldoe = "*"
+numba = "*"
+matplotlib = "*"
+autopep8 = "*"
+pandas = "*"
+openpyxl = "*"
 
 [dev-packages]
 
