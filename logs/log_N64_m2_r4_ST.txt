@@ -1,0 +1,11 @@
+n : 2 - P : 0 - C : 1 - R: 1 - Total time: 0.00 seconds
+n : 3 - P : 1 - C : 33 - R: 3 - Total time: 0.03 seconds
+n : 4 - P : 3 - C : 52 - R: 7 - Total time: 0.03 seconds
+n : 5 - P : 7 - C : 96 - R: 13 - Total time: 0.06 seconds
+n : 6 - P : 13 - C : 111 - R: 25 - Total time: 0.06 seconds
+n : 7 - P : 25 - C : 116 - R: 29 - Total time: 0.09 seconds
+n : 8 - P : 29 - C : 80 - R: 28 - Total time: 0.08 seconds
+n : 9 - P : 28 - C : 56 - R: 17 - Total time: 0.08 seconds
+n : 10 - P : 17 - C : 19 - R: 9 - Total time: 0.05 seconds
+n : 11 - P : 9 - C : 8 - R: 4 - Total time: 0.03 seconds
+n : 12 - P : 4 - C : 2 - R: 2 - Total time: 0.02 seconds
