@@ -8,10 +8,18 @@ With this code you can run the three enumeration procedures mentioned in the pap
 - DOP-NAUTY
 - MCS-Regular
 
+To use the files in this project, first install the pipenv environement associated with it.
+Assuming pipenv is installed on your machine (if follow [these instructions](https://pipenv-fork.readthedocs.io/en/latest/basics.html#)), run the following command:
+
+```bash
+pipenv install
+pipenv shell
+```
+
 ## Test results
 
 Figure 1 of the paper display three graphs that illustrate the differences in running time between the three enumeration procedures.
-To obtain the data used to generate the three graphs, run the `test.sh` file.
+To obtain the data used to generate the three graphs, run `test.sh`.
 Then, to generate the three graphs, run the following command:
 
 ```bash
@@ -28,10 +36,10 @@ The following example shows how to enumerate all 32-run designs of resolution II
 
 You first need to initialize the *root* design, i.e. the design that contains the four-level factor and all the remaining basic two-level factors.
 In this example, there are $log_2(32)-2*m=5-2=3$ remaining basic factors, so the root design is a $4^12^3$ design.
-To generate the root design for the search table (ST) method, run the `init3.py` script:
+To generate the root design for a design with `32` runs, `1` four-level factor, with resolution `3` and using the search table (`ST`) method, run `init3.py` with the following options:
 
 ```bash
-python init3.py -l 32 1 4 ST
+python init3.py -l 32 1 3 ST
 ```
 
 ### Extending the root design
