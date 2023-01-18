@@ -14,6 +14,7 @@ matplotlib = "*"
 autopep8 = "*"
 pandas = "*"
 openpyxl = "*"
+csw93 = "*"
 
 [dev-packages]
 
