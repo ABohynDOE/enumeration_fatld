@@ -6,27 +6,28 @@ Created on Wed Jun  2 11:52:11 2021
 @author: Alexandre Bohyn - alexandre dot bohyn [at] kuleuven dot be
 """
 
+from math import log2
+from time import asctime, process_time
+
 # %% Packages
 import argh
-from tqdm import tqdm
-import oapackage as oa
-from math import log2
-from mldoe.matrix import bmat
 import numpy as np
-from time import process_time, asctime
+import oapackage as oa
+from mldoe.matrix import bmat
+from tqdm import tqdm
 
 # %% Declaring
 
 
 @argh.arg("-p", "--progress", choices={0, 1, 2})
 def main(
-    N: "Run size",
-    m: "Number of four-level factors",
-    n: "Number of two-level factors (after extension)",
-    r: "Resolution",  # noqa:F821
-    silent: "No std output" = False,
-    log: "Create a log file with the number of designs and the total time" = False,
-    progress: "Displays a progress bar on the processing of designs (0: None, 1: + candidates, 2: + representatives" = 2,
+    N: "Run size", # noqa
+    m: "Number of four-level factors", # noqa
+    n: "Number of two-level factors (after extension)", # noqa
+    r: "Resolution",  # noqa
+    silent: "No std output" = False, # noqa
+    log: "Create a log file with the number of designs and the total time" = False, # noqa
+    progress: "Displays a progress bar on the processing of designs (0: None, 1: + candidates, 2: + representatives" = 2, # noqa
 ):
 
     # Check that variables are integers
@@ -155,4 +156,5 @@ def main(
 
 # %% Dispatching
 if __name__ == "__main__":
+    argh.dispatch_command(main)
     argh.dispatch_command(main)

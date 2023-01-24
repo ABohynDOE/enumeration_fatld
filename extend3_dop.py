@@ -6,20 +6,20 @@ Created on Thu Jun  3 11:17:15 2021
 @author: Alexandre Bohyn - alexandre dot bohyn [at] kuleuven dot be
 """
 
+import sys
+from itertools import chain
+from math import log2
+from os import devnull
+from time import asctime, process_time
 # %% Packages
 from typing import List
 
 import argh
-import oapackage as oa
-from math import log2
-from itertools import chain
-from mldoe.design import gen_len
-from mldoe.matrix import bmat
 import numpy as np
-from time import process_time, asctime
+import oapackage as oa
+from mldoe.design import gen_len
 from mldoe.enumeration import selectIsomorphismClasses
-from os import devnull
-import sys
+from mldoe.matrix import bmat
 from tqdm import tqdm
 
 
@@ -31,7 +31,8 @@ def get_pf(m: int) -> List[List[int]]:
     :param m: Number of four-level factors
     :type m: int
     :raises ValueError: Not implemented for m > 2
-    :return: List of the pseudo-factor triplets (as list of three columns of the form a, b and ab)
+    :return: List of the pseudo-factor triplets 
+            (as list of three columns of the form a, b and ab)
     :rtype: List[List[int]]
 
     """
@@ -122,13 +123,13 @@ def nauty_reduction(al: List[oa.array_link]) -> List[oa.array_link]:
 # %% Declaring
 @argh.arg("-p", "--progress", choices={0, 1, 2})
 def main(
-    N: "Run size",
-    m: "Number of four-level factors",
-    n: "Number of two-level factors (after extension)",
-    r: "Minimal resolution",
-    silent: "No std output" = False,
-    log: "Create a log file with the number of designs and the total time" = False,
-    progress: "Displays a progress bar on the processing of designs (0: None, 1: + candidates, 2: + representatives" = 2,
+    N: "Run size", # noqa
+    m: "Number of four-level factors", # noqa
+    n: "Number of two-level factors (after extension)", # noqa
+    r: "Minimal resolution", # noqa
+    silent: "No std output" = False, # noqa
+    log: "Create a log file with the number of designs and the total time" = False, # noqa
+    progress: "Displays a progress bar on the processing of designs (0: None, 1: + candidates, 2: + representatives" = 2, # noqa
 ):
 
     # Check that variables are integers

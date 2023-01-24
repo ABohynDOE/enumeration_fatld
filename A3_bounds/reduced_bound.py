@@ -71,7 +71,8 @@ def make4lvl(mat, pairs, m_factor) -> np.array:
 
 
 def tfi_matrix(ar: oa.array_link, pseudo_factors: List[Tuple[int]]) -> np.array:
-    """Create a two-factor interaction matrix of the array, with unfolded four-level factors"""
+    """Create a two-factor interaction matrix of the array, 
+    with unfolded four-level factors"""
     # Get the matrix of the design
     matrix = ar.getarray()
     pf_list = list(chain(*pseudo_factors))

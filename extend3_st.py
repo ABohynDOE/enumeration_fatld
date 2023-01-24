@@ -6,20 +6,20 @@ Created on Thu Jun  3 11:17:15 2021
 @author: Alexandre Bohyn - alexandre dot bohyn [at] kuleuven dot be
 """
 
-# %% Packages
-import argh
 import sys
-import oapackage as oa
-import numpy as np
-
-from operator import itemgetter
 from itertools import chain, combinations
 from math import log2
-from mldoe.matrix import bmat
-from time import process_time, asctime
-from mldoe.enumeration import selectIsomorphismClasses
+from operator import itemgetter
 from os import devnull
+from time import asctime, process_time
 from typing import List, Tuple
+
+# %% Packages
+import argh
+import numpy as np
+import oapackage as oa
+from mldoe.enumeration import selectIsomorphismClasses
+from mldoe.matrix import bmat
 from tqdm import tqdm
 
 # %% Helper functions
@@ -124,13 +124,13 @@ def nauty_reduction(al: List[oa.array_link]) -> List[oa.array_link]:
 
 @argh.arg("-p", "--progress", choices={0, 1, 2})
 def main(
-    N: "Run size",
-    m: "Number of four-level factors",
-    n: "Number of two-level factors (after extension)",
-    r: "Resolution",  # noqa:F821
-    silent: "No std output" = False,
-    log: "Create a log file with the number of designs and the total time" = False,
-    progress: "Displays a progress bar on the processing of designs (0: None, 1: + candidates, 2: + representatives" = 2,
+    N: "Run size", # noqa
+    m: "Number of four-level factors", # noqa
+    n: "Number of two-level factors (after extension)", # noqa
+    r: "Resolution",  # noqa
+    silent: "No std output" = False, # noqa
+    log: "Create a log file with the number of designs and the total time" = False, # noqa
+    progress: "Displays a progress bar on the processing of designs (0: None, 1: + candidates, 2: + representatives" = 2, # noqa
 ):
 
     # Check that variables are integers
