@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# pyright: reportUnexpectedTokens=false
 """
 Initialize the first batch of MLD using the oapackage and the mldoe package
 Created on Thu Jun  3 11:02:13 2021
@@ -6,15 +7,15 @@ Created on Thu Jun  3 11:02:13 2021
 @author: Alexandre Bohyn - alexandre dot bohyn [at] kuleuven dot be
 """
 
+import os
+from itertools import chain
+from math import log2
 # %% Packages
 from typing import List
-from math import log2
-from itertools import chain
-from mldoe.design import MLD
 
 import argh
-import os
 import oapackage as oa
+from mldoe.design import MLD
 
 
 # %% Helper functions
@@ -25,7 +26,8 @@ def get_pf(m: int) -> List[List[int]]:
     :param m: Number of four-level factors
     :type m: int
     :raises ValueError: Not implemented for m > 2
-    :return: List of the pseudo-factor triplets (as list of three columns of the form a, b and ab)
+    :return: List of the pseudo-factor triplets 
+            (as list of three columns of the form a, b and ab)
     :rtype: List[List[int]]
 
     """
@@ -39,12 +41,12 @@ def get_pf(m: int) -> List[List[int]]:
 
 # %% Declaring
 def main(
-    N: "Run size",
-    m: "Number of four-level factors",
-    r: "Minimal resolution",
-    method: "Type of method to use (one of 'ST', 'DOP', or 'MCS')",
-    silent: "No std output" = False,
-    log: "Create a log file with the number of designs and the total time" = False,
+    N: "Run size",  # noqa
+    m: "Number of four-level factors",  # noqa
+    r: "Minimal resolution",  # noqa
+    method: "Type of method to use (one of 'ST', 'DOP', or 'MCS')",  # noqa
+    silent: "No std output" = False,  # noqa
+    log: "Create a log file with the number of designs and the total time" = False,  # noqa
 ):
     # Check that variables are integers
     try:

@@ -8,8 +8,9 @@ Created on Tue Jun  15 14:38:00 2021
 """
 import glob
 import re
-import pandas as pd
 from collections import defaultdict
+
+import pandas as pd
 
 
 def get_log_info(log_filename: str) -> (int, int, int, str):
@@ -61,4 +62,5 @@ if __name__ == "__main__":
                 columns="method",
             )
             # Write it to the excel file
+            wide_df.to_excel(writer, sheet_name=key)
             wide_df.to_excel(writer, sheet_name=key)
