@@ -1,6 +1,6 @@
 # Enumeration of regular fractional factorial designs with four-level and two-level factors
 
-This repository holds the code to reproduce the results from our paper "Enumeration of regular fractional factorial designs with four-level and two-level factors".
+This repository holds the code to reproduce the results from our paper ["Enumeration of regular fractional factorial designs with four-level and two-level factors"](https://arxiv.org/abs/2303.05811).
 
 The code in this repository includes:
 
